@@ -29,7 +29,7 @@ public class Product {
     public String toString() {
         return "Product[" +
                 "id=" + id +
-                ", title='" + title + '\'' +
+                ", title='" + String.format("%c", title) + "'" +
                 ", cost=" + String.format("%.2f", price) +
                 ']';
     }
