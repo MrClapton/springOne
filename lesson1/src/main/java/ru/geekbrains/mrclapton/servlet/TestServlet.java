@@ -25,10 +25,10 @@ public class TestServlet extends HttpServlet {
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        logger.info("send txt to client");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        logger.info("send Product list to client");
         String response = ProductService.getProducts(10).toString();
-        resp.setContentType("text/html");
+        //resp.setContentType("text/html");
         resp.getWriter().printf("<h1>Hello, buddy! List of products that you requested: %s </h1>", response);
         resp.getWriter().close();
         //resp.getWriter().println(ProductService.getProducts(5));
